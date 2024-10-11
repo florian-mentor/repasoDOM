@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema Gestión Medicamentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <header>
+        <h1>Sistema de Entrega de Medicamentos - IPS Local</h1>
+    </header>
+
+    <section id="entrada-medicamentos">
+        <h2>Existencias de Medicamentos</h2>
+        <label for="medicamento1">Existencias Medicamento 1:</label>
+        <input type="number" id="medicamento1" min="0"><br>
+
+        <label for="medicamento2">Existencias Medicamento 2:</label>
+        <input type="number" id="medicamento2" min="0"><br>
+
+        <button id="actualizarExistencias">Actualizar Existencias</button>
+        <p id="mostrarExistencias"></p>
+    </section>
+
+    <section id="mensajes">
+        <h3 id="mensaje" class="error"></h3>
+    </section>
+
+    <section id="entrada-pacientes">
+        <h2>Información del Paciente</h2>
+        <label for="sistolica">Presión Sistólica:</label>
+        <input type="number" id="sistolica" min="0"><br>
+
+        <label for="diastolica">Presión Diastólica:</label>
+        <input type="number" id="diastolica" min="0"><br>
+
+        <button id="procesarPaciente">Procesar Paciente</button>
+    </section>
+
+    <section id="resultados">
+        <h2>Resultados</h2>
+        <p id="resultadoPaciente"></p>
+        <p id="estadisticas"></p>
+    </section>
+    
+    <section id="existenciasMedic">
+        <h2>Existencia de Medicamentos</h2>
+        <h3>Cantidad de Medicamentos 1 en existencia: </h3> <h3 id="existenciasMedic1">0</h3>
+        <h3>Cantidad de Medicamentos 2 en existencia: </h3> <h3 id="existenciasMedic2">0</h3>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
