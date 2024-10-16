@@ -9,23 +9,19 @@ let auxMedic2 = 0;
 // Actualizar existencias de medicamentos
 document.getElementById('actualizarExistencias').addEventListener('click', () => {
 
-    auxMedic1 = parseInt(document.getElementById('medicamento1').value);
+    auxMedic1 = parseInt(document.getElementById('medicamento1').value);            // Var aux para paso de datos 
     auxMedic2 = parseInt(document.getElementById('medicamento2').value);
 
     if(auxMedic1 > 0 && auxMedic2 > 0){
         if (pacientesAtendidos > 0) {
             existenciasMedicamento1 = parseInt(existenciasMedicamento1) + auxMedic1;    // Lo concatena sino esta convertdio a Int
             existenciasMedicamento2 = parseInt(existenciasMedicamento2) + auxMedic2;
-            /* document.getElementById('mostrarExistencias').innerHTML = 
-            `<h3> Medicamento 1: ${existenciasMedicamento1} unidades, <br> Medicamento 2: ${existenciasMedicamento2} unidades </h3>`;
-            document.getElementById("existenciasMedic1").textContent = existenciasMedicamento1; // Actualizar existe final */
+          
             document.getElementById('mensaje').textContent = "";
         }else{
-            existenciasMedicamento1 = document.getElementById('medicamento1').value;        // La primera vez esariasn en 0 daria negativo
+            existenciasMedicamento1 = document.getElementById('medicamento1').value;        // La primera vez estarian en 0 daria negativo
             existenciasMedicamento2 = document.getElementById('medicamento2').value;
-          /*   document.getElementById('mostrarExistencias').innerHTML = 
-            `<h3> Medicamento 1: ${existenciasMedicamento1} unidades, <br> Medicamento 2: ${existenciasMedicamento2} unidades </h3>`;
-            document.getElementById("existenciasMedic2").textContent = existenciasMedicamento2; */
+      
             document.getElementById('mensaje').textContent = "";
         }
     }else{
@@ -79,6 +75,8 @@ document.getElementById('procesarPaciente').addEventListener('click', () => {
             existenciasMedicamento2 -= dosis;
             pacientesMedicamento2++;
             document.getElementById("existenciasMedic2").textContent = existenciasMedicamento2;
+        }else if(medicamentoEntregado !== 1 && medicamentoEntregado !== 2 ){        // Validamos cuando el Tipo Medic es Ninguno
+            medicamentoEntregado = "Ninguno";
         }else{
             document.getElementById('mensaje').textContent = "Atencion: Dosis exceden la cantidad de existencias del medicamento..";
         }
